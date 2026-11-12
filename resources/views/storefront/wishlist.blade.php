@@ -1,0 +1,2 @@
+@extends('storefront.layout')
+@section('content')<section class="section"><span class="eyebrow">KEPT CLOSE</span><h1>Your wishlist.</h1><div class="product-grid">@forelse($products as $item)@include('storefront.card')@empty<div class="empty"><h2>Save a little inspiration.</h2><p>Tap the heart on a piece to keep it here for later.</p><a class="button" href="{{ url('/shop') }}">Discover the edit ↗</a></div>@endforelse</div></section>@endsection

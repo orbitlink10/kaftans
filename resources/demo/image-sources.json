@@ -1,0 +1,94 @@
+{
+  "notice": "Private development reference imagery. Replace with owned or licensed photography before launch. No public reuse permission assumed.",
+  "sourcePage": "https://www.ikojn.com/",
+  "assets": [
+    {
+      "local": "/reyana/look-1.webp",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP6374.webp?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-2.webp",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP8091-Edit.webp?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-3.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP1628.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-4.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/APRILSHOOT-763-Edit.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-5.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP3444-Edit.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-6.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP0345.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-7.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP1746-Edit.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-8.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP1850.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-9.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP4723-Edit_e47d275b-2b2a-4696-9257-e6aab0832a02.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-10.jpg",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP1614-Edit.jpg?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    },
+    {
+      "local": "/reyana/look-11.webp",
+      "source": "https://www.ikojn.com/cdn/shop/files/WQP01732.webp?width=1000",
+      "derivatives": [
+        400,
+        750
+      ]
+    }
+  ]
+}

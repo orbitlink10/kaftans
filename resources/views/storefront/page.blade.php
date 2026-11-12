@@ -1,0 +1,7 @@
+@extends('storefront.layout')
+@push('head')
+@if(str_starts_with($page,'blog/'))
+<script type="application/ld+json">{!! json_encode(['@context'=>'https://schema.org','@type'=>'Article','headline'=>$content['title'],'description'=>$content['intro'],'author'=>['@type'=>'Organization','name'=>'Reyana'],'publisher'=>['@type'=>'Organization','name'=>'Reyana'],'mainEntityOfPage'=>url('/'.$page)], JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT) !!}</script>
+@endif
+@endpush
+@section('content')<article class="section prose"><div class="breadcrumbs"><a href="{{ url('/') }}">Home</a> / {{ $content['title'] }}</div><span class="eyebrow">REYANA / {{ str_starts_with($page,'blog') ? 'JOURNAL' : 'GOOD TO KNOW' }}</span><h1>{{ $content['title'] }}</h1><h2>{{ $content['intro'] }}</h2><p>{{ $content['text'] }}</p>@if($page==='account')<a class="button" href="{{ route('login') }}">Sign in ↗</a>@auth<a class="text-link" href="{{ route('dashboard') }}">Dashboard ↗</a>@if(auth()->user()->isRole(['admin','dispatcher']))<a href="{{ url('/admin/fashion') }}">Manage fashion catalog ↗</a>@endif @endauth @elseif($page==='blog')<a class="button" href="{{ url('/blog/a-wardrobe-that-works-for-you') }}">Read the wardrobe notes ↗</a>@else<a class="text-link" href="{{ url('/collections/dresses') }}">Explore dresses ↗</a> <a class="text-link" href="{{ url('/shop') }}">Shop the edit ↗</a>@endif</article>@endsection

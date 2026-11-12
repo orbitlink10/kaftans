@@ -1,0 +1,2 @@
+@extends('storefront.layout', ['title'=>'Page not found | Reyana','collections'=>\App\Services\FashionCatalog::collections()])
+@section('content')<section class="section prose"><span class="eyebrow">404 / A DIFFERENT DIRECTION</span><h1>Let’s find your way.</h1><p>This page is unavailable. Explore the Reyana collection or return to the homepage.</p><a class="button" href="{{ url('/shop') }}">Explore the edit ↗</a></section>@endsection

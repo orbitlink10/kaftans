@@ -1,0 +1,18 @@
+@extends('layouts.dashboard')
+@section('title', $category->exists ? 'Update Category' : 'Create Category')
+@section('dashboard-title', '')
+@section('dashboard-subtitle', '')
+@section('content')
+@include('admin.catalog-style')
+<div class="catalog-screen"><div class="catalog-header"><h1>{{ $category->exists ? 'Update Category' : 'Create Category' }}</h1><a href="{{ route('admin.categories.index') }}">Back to categories</a></div>
+<div class="catalog-panel"><form class="catalog-form" method="post" enctype="multipart/form-data" action="{{ $category->exists ? route('admin.categories.update', $category) : route('admin.categories.store') }}">@csrf @if($category->exists) @method('PUT') @endif
+<div class="catalog-field"><label for="name">Name <span class="text-danger">*</span></label><input id="name" name="name" value="{{ old('name', $category->name) }}" placeholder="Enter category name" required maxlength="160"></div>
+<div class="catalog-field"><label for="meta_description">Meta description</label><textarea id="meta_description" name="meta_description" placeholder="Enter category meta description" maxlength="1000">{{ old('meta_description', $category->meta_description) }}</textarea></div>
+<div class="catalog-field"><label for="description">Description (Optional)</label><textarea id="description" name="description" placeholder="Enter category description">{{ old('description', $category->description) }}</textarea></div>
+<details open><summary>SEO Settings</summary><div class="catalog-field"><label for="slug">URL slug</label><input id="slug" name="slug" value="{{ old('slug', $category->slug) }}" placeholder="Generated from category name" maxlength="180"></div><div class="catalog-field"><label for="meta_title">Meta title</label><input id="meta_title" name="meta_title" value="{{ old('meta_title', $category->meta_title) }}" maxlength="255"></div><label class="d-block mb-3"><input type="checkbox" name="is_indexable" value="1" @checked(old('is_indexable', $category->exists ? $category->is_indexable : true))> Allow search engines to index this category when it has published products</label><p class="text-muted">Empty categories are always noindex and are hidden from navigation, regardless of this setting.</p></details>
+<details open><summary>Parent Category and Image (Optional)</summary><div class="catalog-field"><label for="parent_id">Parent Category</label><select id="parent_id" name="parent_id"><option value="">Top Level Category</option>@foreach($parents as $parent)<option value="{{ $parent->id }}" @selected(old('parent_id', $category->parent_id)==$parent->id)>{{ $parent->name }}</option>@endforeach</select></div><div class="catalog-field"><label for="image">Upload Image</label><input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp">@if($category->image)<img class="catalog-photo mt-3" src="{{ $category->image }}" alt="{{ $category->name }}">@endif</div><p class="text-muted">Use a parent category only when you are creating a sub category.</p></details>
+<div class="catalog-footer"><span class="text-muted">Descriptions are optional and help customers explore your categories.</span><button class="catalog-btn">Save Category</button></div>
+</form></div></div>
+<script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js" referrerpolicy="origin"></script>
+<script>if(window.tinymce)tinymce.init({selector:'#description',height:360,menubar:'file edit view insert format tools table',plugins:'lists link table code fullscreen',toolbar:'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist | link table | code fullscreen',promotion:false,branding:false});</script>
+@endsection

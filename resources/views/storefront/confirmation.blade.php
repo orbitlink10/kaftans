@@ -1,0 +1,2 @@
+@extends('storefront.layout')
+@section('content')<section class="section prose"><span class="eyebrow">PREVIEW COMPLETE</span><h1>Your look, considered.</h1><h2>{{ session('reyana.confirmation.reference') }}</h2><p>Your demonstration checkout is complete. No payment was taken, no inventory was reserved, and no real order was placed.</p><p>Sample subtotal: KSh {{ number_format(session('reyana.confirmation.subtotal')) }}<br>Payable: KSh 0</p><a class="button" href="{{ url('/shop') }}">Back to the edit ↗</a></section>@endsection
